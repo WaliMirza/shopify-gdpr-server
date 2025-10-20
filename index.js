@@ -1,5 +1,6 @@
 const express = require("express");
 const crypto = require("crypto");
+const path = require("path");
 
 const app = express();
 
@@ -30,7 +31,10 @@ function verifyHmac(req, res, next) {
   }
 }
 
-// ✅ Main mandatory webhooks
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 app.post("/webhooks/customers/data_request", verifyHmac, (req, res) => {
   console.log("📩 customers/data_request webhook received");
   res.sendStatus(200);
