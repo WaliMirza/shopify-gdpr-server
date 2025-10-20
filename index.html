@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MW WhatsApp FAB App</title>
+
+    <!-- Shopify App Bridge -->
+    <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var AppBridge = window["app-bridge"];
+        var createApp = AppBridge.default;
+        var app = createApp({
+          apiKey: "00cd5fd377d5eac320cf78ca556844bc",
+          shopOrigin: new URLSearchParams(window.location.search).get("shop"),
+        });
+        console.log("✅ App Bridge initialized");
+      });
+    </script>
+  </head>
+
+  <body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
+    <h1>MW WhatsApp FAB</h1>
+    <p>Your embedded Shopify app is running successfully ✅</p>
+  </body>
+</html>
